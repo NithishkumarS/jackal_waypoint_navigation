@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+ 
+  <!-- Run laser to base_link transform -->
+    <node name="laser2base_link" pkg="waypoint_nav" type="laser2base_link"/>
+
+    <node pkg="tf" type="static_transform_publisher" name="odom_to_map"
+       args="0.125 0  0  0 0 0 1  /map /odom 18" />
+
+    <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find waypoint_nav)/map_files/Iribe_lobby_cropped.yaml" > -->
+    <!-- <param name="frame_id" value="map"/> -->
+    <!-- </node> -->
+
+</launch>
+
