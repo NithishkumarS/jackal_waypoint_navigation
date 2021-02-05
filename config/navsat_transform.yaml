@@ -1,0 +1,5 @@
+frequency: 50
+magnetic_declination_radians: 0
+yaw_offset: 1.570
+broadcast_utm_transform: true
+publish_filtered_gps: true
