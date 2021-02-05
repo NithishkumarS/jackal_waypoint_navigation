@@ -2,12 +2,11 @@
 
 
 
-##Dependencies
+## Dependencies
 ```
 Jackal simulator
 Jackal desktop 
-
-jackal Navigation
+Jackal Navigation
 ```
 
 ## Instructions to use the repo
@@ -18,6 +17,9 @@ git clone https://github.com/jackal/jackal_desktop
 git clone https://github.com/jackal/jackal_simulator.git
 git clone https://github.com/jackal/jackal.git
 git clone https://github.com/NithishkumarS/jackal_waypoint_navigation.git
+cd ..
+rosdep install --from-paths src --ignore-src -r -y
+catkin_make
 ```
 
 ## Running the code
