@@ -15,9 +15,10 @@
 
     <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node">
 	    <rosparam command="load" file="$(find waypoint_nav)/config/navsat_transform.yaml" />
-	    <remap from="/gps/fix" to="/navsat/fix" />
+	    <remap from="/gps/fix" to="/gps/fix" />
 	    <remap from="/odometry/filtered" to="/odometry/gps/filtered"/>'
 	</node>
+
 	<!--      <node name="map_server" pkg="map_server" type="map_server" args="$(find waypoint_nav)/map_files/outdoor_map.yaml" > 
      <param name="frame_id" value="map"/> 
     </node> 

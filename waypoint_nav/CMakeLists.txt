@@ -39,9 +39,11 @@ include_directories(
 
 add_executable(laser2base_link src/laser2base_link.cpp)
 add_executable(gps_waypoint src/gps_waypoint.cpp)
+add_executable(frameid_convertor src/frameid_con.cpp)
 
 target_link_libraries(gps_waypoint ${catkin_LIBRARIES})
 target_link_libraries(laser2base_link ${catkin_LIBRARIES})
+target_link_libraries(frameid_convertor ${catkin_LIBRARIES})
 
 install(DIRECTORY  launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
