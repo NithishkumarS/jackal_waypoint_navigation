@@ -7,12 +7,12 @@
       <arg name="use_map_topic" value="true" />
     </include>
 
-	<include file="$(find jackal_viz)/launch/view_robot.launch">
+<!-- 	<include file="$(find jackal_viz)/launch/view_robot.launch">
       <arg name="config" value="localization" />
-    </include>
+    </include> -->
   <!-- Run rviz -->
-<!--     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find outdoor_waypoint_nav)/rviz_config/model.rviz" />
- -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find waypoint_nav)/rviz_config/model.rviz" />
+
  
   <!-- Run laser to base_link transform -->
     <node name="laser2base_link" pkg="waypoint_nav" type="laser2base_link"/>
