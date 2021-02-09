@@ -1,6 +1,18 @@
 <?xml version="1.0"?>
 
 <launch>
+
+	<include file="$(find jackal_navigation)/launch/amcl_demo.launch">
+      <arg name="map_file" value="/home/gamma-robot/ros_ws/src/outdoor_nav/waypoint_nav/map_files/outdoor_map.yaml" />
+      <arg name="use_map_topic" value="true" />
+    </include>
+
+	<include file="$(find jackal_viz)/launch/view_robot.launch">
+      <arg name="config" value="localization" />
+    </include>
+  <!-- Run rviz -->
+<!--     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find outdoor_waypoint_nav)/rviz_config/model.rviz" />
+ -->
  
   <!-- Run laser to base_link transform -->
     <node name="laser2base_link" pkg="waypoint_nav" type="laser2base_link"/>
@@ -8,7 +20,6 @@
     <node pkg="tf" type="static_transform_publisher" name="odom_to_map"
        args="0.125 0  0  0 0 0 1  /map /odom 18" />
 
-    <launch>
 
     <node pkg="robot_localization" type="ekf_localization_node" name="gps_ekf_localization">
 	    <rosparam command="load" file="$(find waypoint_nav)/config/gps_robot_localization.yaml" />
@@ -17,7 +28,7 @@
 
     <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node">
 	    <rosparam command="load" file="$(find waypoint_nav)/config/navsat_transform.yaml" />
-	    <remap from="/gps/fix" to="/navsat/fix" />
+	    <remap from="/gps/fix" to="/gps/fix" />
 	    <remap from="/odometry/filtered" to="/odometry/gps/filtered"/>'
 	</node>
 
