@@ -189,7 +189,7 @@ Visualization Manager:
         Shaft Length: 1
         Shaft Radius: 0.0500000007
         Value: Arrow
-      Topic: /outdoor_waypoint_nav/odometry/gps
+      Topic: /odometry/gps
       Unreliable: false
       Value: false
     - Angle Tolerance: 0.100000001
@@ -223,7 +223,7 @@ Visualization Manager:
         Shaft Length: 1
         Shaft Radius: 0.0500000007
         Value: Arrow
-      Topic: /outdoor_waypoint_nav/odometry/filtered_map
+      Topic: /odometry/gps/filtered
       Unreliable: false
       Value: true
     - Alpha: 0.699999988
@@ -232,7 +232,7 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: Map - Gmapping
-      Topic: /outdoor_waypoint_nav/map
+      Topic: /map
       Unreliable: false
       Use Timestamp: false
       Value: true
