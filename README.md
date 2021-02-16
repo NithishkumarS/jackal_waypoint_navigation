@@ -35,4 +35,17 @@ Visualize localization
 roslaunch jackal_viz view_robot.launch config:=localization
 ```
 
+## Waypoint node
+
+```
+rosparam set /longitude_goal -76.935847
+rosparam set /latitude_goal 38.989960
+rosrun waypoint_nav gps_waypoint
+```
+
+Running old bag files
+```
+rosbag play <name> --clock
+rosparam set use_sim_time true
+```
 
