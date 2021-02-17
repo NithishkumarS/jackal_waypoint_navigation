@@ -48,4 +48,20 @@ Running old bag files
 rosbag play <name> --clock
 rosparam set use_sim_time true
 ```
+Increased inflatio radius in costmap_common_params.yaml to .5
 
+
+Waypoints 
+```
+parking behind AV Williams: 
+38.990683, -76.935968
+
+AV williams
+38.990599, -76.936570
+
+Near wind tunnel
+38.990180, -76.936594
+
+Nearest:
+38.989999, -76.935867
+```
