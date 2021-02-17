@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <rosparam command="load" file="$(find waypoint_nav)/config/dual_ekf_jackal.yaml" />
+  
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se_odom" clear_params="true"/>
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se_map" clear_params="true">
+    <remap from="odometry/filtered" to="/odometry/gps/filtered"/>
+  </node>
+
+  <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node">
+      <rosparam command="load" file="$(find waypoint_nav)/config/navsat_transform.yaml" />
+      <remap from="/gps/fix" to="/gps/fix" />
+      <remap from="/odometry/filtered" to="/odometry/gps/filtered"/>'
+  </node>
+
+  <!-- Run rviz -->
+     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find waypoint_nav)/rviz_config/model.rviz" />
+
+  <!-- Run move_base -->
+   <include file="$(find jackal_navigation)/launch/include/move_base.launch" />
+ 
+
+  <!-- Run laser to base_link transform -->
+   <node name="laser2base_link" pkg="waypoint_nav" type="laser2base_link"/>
+
+    
+   <node name="map_server" pkg="map_server" type="map_server" args="$(find waypoint_nav)/map_files/outdoor_map.yaml" > 
+     <!-- <param name="frame_id" value="map"/>  -->
+    </node> 
+
+ 
+</launch>
