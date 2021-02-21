@@ -1,6 +1,6 @@
 #Configuation for robot odometry EKF with GPS
 #
-frequency: 50
+frequency: 15
 
 odom0: /jackal_velocity_controller/odom
 odom0_config: [false, false, false,

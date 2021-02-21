@@ -1,4 +1,4 @@
-frequency: 50
+frequency: 15
 magnetic_declination_radians: 0.2
 yaw_offset: 1.2
 broadcast_utm_transform: true
