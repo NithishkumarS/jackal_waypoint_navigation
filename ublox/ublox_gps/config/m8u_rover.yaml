@@ -8,7 +8,7 @@ save:
   device: 4                 # Save to EEPROM
 
 device: /dev/ttyACM0
-frame_id: m8_u 
+frame_id: navsat_link 
 rate: 25                     # in Hz
 nav_rate: 4                 # [# of measurement cycles], recommended 1 Hz, may 
                             # be either 5 Hz (Dual constellation) or 
