@@ -1,5 +1,5 @@
 image: outdoor_map.png
-resolution: 0.363
+resolution: 0.353
 origin: [-300.0, -100.0, 0.000000]
 negate: 0
 occupied_thresh: 0.65
