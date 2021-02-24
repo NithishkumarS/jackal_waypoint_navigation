@@ -13,20 +13,20 @@
     <!-- Launch local EKF node (Odom frame) -->
   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_local"
         clear_params="true" output="screen">
-    <remap from="odometry/filtered" to="/odometry/gps/filtered2"/>
+    <remap from="odometry/filtered" to="/odometry/gps/filtered"/>
   </node>
 
   <!-- Launch Global EKF node (Map frame) -->
   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_global"
         clear_params="true" output="screen">
-    <remap from="odometry/filtered" to="/odometry/gps/filtered2"/>
+    <remap from="odometry/filtered" to="/odometry/gps/filtered"/>
   </node>
   
 
   <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node">
       <rosparam command="load" file="$(find waypoint_nav)/config/navsat_transform.yaml" />
       <remap from="/gps/fix" to="/gps/fix" />
-      <remap from="/odometry/filtered" to="/odometry/gps/filtered2"/>'
+      <remap from="/odometry/filtered" to="/odometry/gps/filtered"/>'
   </node>
 
   <!-- Run rviz -->
