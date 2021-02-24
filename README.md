@@ -65,3 +65,15 @@ Near wind tunnel
 Nearest:
 38.989999, -76.935867
 ```
+
+
+
+Things to chgange  in the jackal pakcgae:
+```
+costmap params:
+inflation radius - 0.5 
+scan_topic : scan
+
+move_base.launch
+remap /odom to /odometry/gps/filtered
+```
