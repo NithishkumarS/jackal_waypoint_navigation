@@ -65,3 +65,27 @@ Near wind tunnel
 Nearest:
 38.989999, -76.935867
 ```
+
+
+SSH into the jackal robot
+
+```
+cd /etc/ros/kinetic/ros.d
+nano base.launch
+```
+
+Added velodyne pcl launch in the base.launch
+```
+
+```
+ <include file=" $(find velodyne_pointcloud)/launch/VLP16_points.launch" />
+ ```
+
+
+ Inorder to get the vlp-16 working with the exisiting jackal setup
+ ```
+ change the network ip in the VLP-16 configuration to 192.168.131.0/24
+ ```
+ This way you can use both the ethernet ports interchangably in the jackal.
+
+ 
