@@ -2,14 +2,24 @@
 #
 frequency: 15
 
+# sensor_timeout: 0.1
+print_diagnostics: true # Check /diagnostics topic for sensor issues
+
+debug: false
+
 odom0: /jackal_velocity_controller/odom
 odom0_config: [false, false, false,
-               false, false, true,
-               true, true, false,
                false, false, false,
+               true, true, false,
+               false, false, true,
                false, false, false]
-odom0_differential: true
-odom0_queue_size: 15
+# odom0_config: [false, false, false,
+#                false, false, true,
+#                true, true, false,
+#                false, false, false,
+#                false, false, false]
+odom0_differential: false
+odom0_queue_size: 10
 
 
 odom1: /odometry/gps
@@ -19,16 +29,19 @@ odom1_config: [true, true, false,
                false, false, false,
                false, false, false]
 odom1_differential: false
-odom1_queue_size: 15
+odom1_queue_size: 10
 
 imu0: /imu/data
 imu0_config: [false, false, false,
-              false,  false,  true,
-              false, false, false,
+              false,  false,  false,
+              true, false, false,
               false,  false,  true,
               false, false, false]
 imu0_differential: false
-imu0_queue_size: 15
+imu0_relative: false
+imu0_queue_size: 110
+
+imu0_remove_gravitational_acceleration: true 
 
 odom_frame: odom
 base_link_frame: base_link
@@ -48,9 +61,9 @@ process_noise_covariance: [0.05,   0,    0,    0,    0,    0,    0,     0,     0
                              0,    0,    0,    0,    0,    0,    0,     0,     0,    0.01, 0,    0,    0,    0,    0,
                              0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0.01, 0,    0,    0,    0,
                              0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0.03, 0,    0,    0,
-                             0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    1,    0,    0,
-                             0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    1,    0,
-                             0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    1]
+                             0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0.1,   0,   0,
+                             0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,   0.1,   0,
+                             0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0.1]
 
 initial_estimate_covariance:  [1e-9, 0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
                               0,    1e-9, 0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,

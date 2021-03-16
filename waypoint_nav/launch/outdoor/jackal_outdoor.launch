@@ -17,16 +17,17 @@
     <node name="laser2base_link" pkg="waypoint_nav" type="laser2base_link"/>
 
     <node pkg="tf" type="static_transform_publisher" name="odom_to_map"
-       args="0.125 0  0  0 0 0 1  /map /odom 18" />
+       args="0.125 0 0 0 0 0 1  /map /odom 100" />
 
     <node pkg="robot_localization" type="ekf_localization_node" name="gps_ekf_localization">
 	  <rosparam command="load" file="$(find waypoint_nav)/config/gps_robot_localization.yaml" />
+	  <!-- <rosparam command="load" file="$(find waypoint_nav)/config/robot_params.yaml" /> -->
 	   <remap from="/odometry/filtered" to="/odometry/gps/filtered" />
   	</node>
 
     <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node">
 	    <rosparam command="load" file="$(find waypoint_nav)/config/navsat_transform.yaml" />
-	    <remap from="/gps/fix" to="/gps/fix" />
+	    <remap from="/gps/fix" to="/ublox/fix" />
 	    <remap from="/odometry/filtered" to="/odometry/gps/filtered"/>'
 	</node>
 
