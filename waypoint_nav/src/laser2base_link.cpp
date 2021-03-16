@@ -12,10 +12,10 @@ void poseCallback(const nav_msgs::Odometry::ConstPtr& msg){
   
   transformStamped.header.stamp = ros::Time::now();
   transformStamped.header.frame_id = "base_link";
-  transformStamped.child_frame_id = "front_laser";
-  transformStamped.transform.translation.x = 0.2;
+  transformStamped.child_frame_id = "base_laser";
+  transformStamped.transform.translation.x = 0.180;
   transformStamped.transform.translation.y = 0.0;
-  transformStamped.transform.translation.z = 0.2;
+  transformStamped.transform.translation.z = 0.1815;
   // tf2::Quaternion q;
   // q.setRPY(0, 0, msg->theta);
   transformStamped.transform.rotation.x = 0;
