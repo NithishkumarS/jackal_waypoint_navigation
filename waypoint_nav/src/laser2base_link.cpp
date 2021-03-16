@@ -12,7 +12,7 @@ void poseCallback(const nav_msgs::Odometry::ConstPtr& msg){
   
   transformStamped.header.stamp = ros::Time::now();
   transformStamped.header.frame_id = "base_link";
-  transformStamped.child_frame_id = "base_laser";
+  transformStamped.child_frame_id = "front_laser";
   transformStamped.transform.translation.x = 0.2;
   transformStamped.transform.translation.y = 0.0;
   transformStamped.transform.translation.z = 0.2;
@@ -27,10 +27,10 @@ void poseCallback(const nav_msgs::Odometry::ConstPtr& msg){
 }
 
 int main(int argc, char** argv){
-  ros::init(argc, argv, "laser2mid_mount_broadcaster");
+  ros::init(argc, argv, "laser2baselink_broadcaster");
     
   ros::NodeHandle node;
-  ros::Subscriber sub = node.subscribe("/odometry/filtered", 10, &poseCallback);
+  ros::Subscriber sub = node.subscribe("/odometry/filtered/local", 10, &poseCallback);
 
   ros::spin();
   return 0;
