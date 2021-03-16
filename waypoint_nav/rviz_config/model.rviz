@@ -193,7 +193,7 @@ Visualization Manager:
         Shaft Length: 1
         Shaft Radius: 0.05000000074505806
         Value: Arrow
-      Topic: /odometry/gps/filtered2
+      Topic: /odometry/filtered/local
       Unreliable: false
       Value: true
     - Angle Tolerance: 0.10000000149011612
@@ -227,7 +227,7 @@ Visualization Manager:
         Shaft Length: 1
         Shaft Radius: 0.05000000074505806
         Value: Arrow
-      Topic: /odometry/gps/filtered
+      Topic: /odometry/filtered/global
       Unreliable: false
       Value: true
     - Alpha: 0.699999988079071
@@ -317,19 +317,31 @@ Visualization Manager:
           Value: true
         chassis_link:
           Value: true
+        front_fender_link:
+          Value: true
         front_left_wheel_link:
+          Value: true
+        front_mount:
           Value: true
         front_right_wheel_link:
           Value: true
+        imu_link:
+          Value: true
         map:
+          Value: true
+        mid_mount:
+          Value: true
+        navsat_link:
           Value: true
         odom:
           Value: true
+        rear_fender_link:
+          Value: true
         rear_left_wheel_link:
           Value: true
-        rear_right_wheel_link:
+        rear_mount:
           Value: true
-        utm:
+        rear_right_wheel_link:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -339,9 +351,29 @@ Visualization Manager:
       Tree:
         map:
           odom:
-            {}
-          utm:
-            {}
+            base_link:
+              chassis_link:
+                front_fender_link:
+                  {}
+                front_left_wheel_link:
+                  {}
+                front_right_wheel_link:
+                  {}
+                imu_link:
+                  {}
+                mid_mount:
+                  front_mount:
+                    {}
+                  rear_mount:
+                    {}
+                navsat_link:
+                  {}
+                rear_fender_link:
+                  {}
+                rear_left_wheel_link:
+                  {}
+                rear_right_wheel_link:
+                  {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -367,7 +399,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 77.64787292480469
+      Distance: 192.25326538085938
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
