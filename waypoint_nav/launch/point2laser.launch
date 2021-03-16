@@ -1,6 +1,6 @@
 <launch>
 
-  <node pkg="tf" type="static_transform_publisher" name="velodyne_to_front_laser" args="0 0 0 0 0 0 /front_laser /velodyne  100" />
+  <node pkg="tf" type="static_transform_publisher" name="velodyne_to_front_laser" args="0.180 0 0.120 0 0 0 /base_laser /velodyne  100" />
 
   <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
 
