@@ -95,3 +95,18 @@ change the network ip in the VLP-16 configuration to 192.168.131.0/24
 ```
 This way you can use both the ethernet ports interchangably in the jackal.
 
+VLP16 range params
+```
+min angle: 260 deg
+max angle: 120 deg
+min_range: 0.3
+
+120deg   1   260deg
+       1   1  
+     1       1
+       1   1
+         1
+         0deg
+```
+
+PCL data update: 6Hz
