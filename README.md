@@ -1,12 +1,13 @@
 # Jackal Outdoor Waypoint Navigation
 
-
+![](Images/jackal.gif)
 
 ## Dependencies
 ```
 Jackal simulator
 Jackal desktop 
 Jackal Navigation
+Velodyne
 ```
 
 ## Instructions to use the repo
@@ -17,6 +18,7 @@ git clone https://github.com/jackal/jackal_desktop
 git clone https://github.com/jackal/jackal_simulator.git
 git clone https://github.com/jackal/jackal.git
 git clone https://github.com/NithishkumarS/jackal_waypoint_navigation.git
+sudo apt install ros-kinetic-velodyne
 cd ..
 rosdep install --from-paths src --ignore-src -r -y
 catkin_make
@@ -35,6 +37,7 @@ Visualize localization
 roslaunch jackal_viz view_robot.launch config:=localization
 ```
 
+![](Images/map_view.jpg)
 ## Waypoint node
 
 ```
